@@ -1,4 +1,4 @@
-
+ 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -26,11 +26,11 @@
 
 	<form action="connexion" method="POST">
 		<div>
-			<label class="bg-primary text-white" for="nom">Nom
+			<label class="bg-primary text-red" for="nom">Nom
 				d'utilisateur</label> <input type=text id=nom name=nom>
 		</div>
 		<div>
-			<label class="bg-primary text-white" for="prenom">Mot de
+			<label class="bg-primary text-red" for="prenom">Mot de
 				passe</label> <input type=password id=prenom name=prenom>
 		</div>
 		<button class="btn btn-primary">Se connecter</button>

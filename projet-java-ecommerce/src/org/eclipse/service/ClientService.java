@@ -55,9 +55,15 @@ public class ClientService {
 		return null;
 	}
 
+	public static Client connectionClient(String identifiant, String motDePasse) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	@Override
 	public String toString() {
 		return "ClientService [clients=" + clients + "]";
 	}
+
 
 }

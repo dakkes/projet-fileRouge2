@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import org.eclipse.model.Adresse;
 
- //methodes****
+  
 
 
 public class AdresseService {
@@ -35,6 +35,8 @@ public class AdresseService {
 	public void remove(Adresse adresse) {
 		adresses.remove(adresse);
 	}
+	
+	//procedure avec void qui n'as pas de case mémoire.
 
 	public void update(Adresse adresse) {
 		for (Adresse adress : adresses) {
@@ -47,6 +49,8 @@ public class AdresseService {
 	public ArrayList<Adresse> findAll() {
 		return adresses;
 	}
+	
+	// fonction avec reserve case mémoire.
 
 	public Adresse findById(int id) {
 		for (int i = 0; i < adresses.size(); i++) {

@@ -6,9 +6,19 @@ public class Vendeur extends Utilisateur {
 
 	private Produit[] produits;
 
-	public Vendeur(int id, String nom, String prenom, String adresseMail, String numeroDeTelephone, String login,
-			String motDePasse, Adresse[] adresses, Produit[] produits) {
-		super(id, nom, prenom, adresseMail, numeroDeTelephone, login, motDePasse, adresses);
+	public Vendeur() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Vendeur(int id, String nom, String prenom, Adresse[] adresses, String adresseMail, String login,
+			String numeroTelephone, String password) {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Vendeur(Produit[] produits) {
+		super();
 		this.produits = produits;
 	}
 
@@ -24,5 +34,7 @@ public class Vendeur extends Utilisateur {
 	public String toString() {
 		return "Vendeur [produits=" + Arrays.toString(produits) + "]";
 	}
+
+	 
 
 }

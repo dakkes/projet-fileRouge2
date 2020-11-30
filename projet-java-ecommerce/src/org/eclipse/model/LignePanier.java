@@ -1,64 +1,59 @@
 package org.eclipse.model;
 
 public class LignePanier {
-	private int idLignePanier;
-	private int quantiteCommander;
-	private Panier panier;
-	private Produit produit;
-
+	private int id;
+	private int quantite;
+	private int idProduit;
+	private int idPanier;
+	private double prixUnitaire;
 	public LignePanier() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	public LignePanier(int quantiteCommander, int idLignePanier, Panier panier, Produit produit) {
+	public LignePanier(int id, int quantite, int idProduit, int idPanier, double prixUnitaire) {
 		super();
-		this.quantiteCommander = quantiteCommander;
-		this.idLignePanier = idLignePanier;
-		this.panier = panier;
-		this.produit = produit;
+		this.id = id;
+		this.quantite = quantite;
+		this.idProduit = idProduit;
+		this.idPanier = idPanier;
+		this.prixUnitaire = prixUnitaire;
 	}
-	
-	
-
-	public int getIdLignePanier() {
-		return idLignePanier;
+	public int getId() {
+		return id;
 	}
-
-	public void setIdLignePanier(int idLignePanier) {
-		this.idLignePanier = idLignePanier;
+	public void setId(int id) {
+		this.id = id;
 	}
-
-	public int getQuantiteCommander() {
-		return quantiteCommander;
+	public int getQuantite() {
+		return quantite;
 	}
-
-	public void setQuantiteCommander(int quantiteCommander) {
-		this.quantiteCommander = quantiteCommander;
+	public void setQuantite(int quantite) {
+		this.quantite = quantite;
 	}
-
-
-
-	public Panier getPanier() {
-		return panier;
+	public int getIdProduit() {
+		return idProduit;
 	}
-
-	public void setPanier(Panier panier) {
-		this.panier = panier;
+	public void setIdProduit(int idProduit) {
+		this.idProduit = idProduit;
 	}
-
-	public Produit getProduit() {
-		return produit;
+	public int getIdPanier() {
+		return idPanier;
 	}
-
-	public void setProduit(Produit produit) {
-		this.produit = produit;
+	public void setIdPanier(int idPanier) {
+		this.idPanier = idPanier;
 	}
-
+	public double getPrixUnitaire() {
+		return prixUnitaire;
+	}
+	public void setPrixUnitaire(double prixUnitaire) {
+		this.prixUnitaire = prixUnitaire;
+	}
 	@Override
 	public String toString() {
-		return "LignePanier [quantiteCommander=" + quantiteCommander + ", idLignePanier=" + idLignePanier + ", panier=" + panier
-				+ ", produit=" + produit + "]";
+		return "LignePanier [id=" + id + ", quantite=" + quantite + ", idProduit=" + idProduit + ", idPanier="
+				+ idPanier + ", prixUnitaire=" + prixUnitaire + "]";
 	}
-
+   
+	
+	
 }

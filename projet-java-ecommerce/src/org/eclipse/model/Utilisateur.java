@@ -1,28 +1,19 @@
-package org.eclipse.model;
-
-import java.util.Arrays;
+ package org.eclipse.model;
 
 public class Utilisateur {
 	private int id;
 	private String nom;
 	private String prenom;
-	private String login;
-	private String adresseMail;
-	private String numeroDeTelephone;
-	private String motDePasse;
-	private Adresse[] adresses;
+	private String type;
 
-	public Utilisateur(int id, String nom, String prenom, String adresseMail, String numeroDeTelephone, String login,
-			String motDePasse, Adresse[] adresses) {
-		super();
+	public Utilisateur() {
+	}
+
+	public Utilisateur(int id, String nom, String prenom, String type) {
 		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
-		this.adresseMail = adresseMail;
-		this.numeroDeTelephone = numeroDeTelephone;
-		this.login = login;
-		this.motDePasse = motDePasse;
-		this.adresses = adresses;
+		this.type = type;
 	}
 
 	public int getId() {
@@ -49,51 +40,17 @@ public class Utilisateur {
 		this.prenom = prenom;
 	}
 
-	public String getAdresseMail() {
-		return adresseMail;
+	public String getType() {
+		return type;
 	}
 
-	public void setAdresseMail(String adresseMail) {
-		this.adresseMail = adresseMail;
-	}
-
-	public String getNumeroDeTelephone() {
-		return numeroDeTelephone;
-	}
-
-	public void setNumeroDeTelephone(String numeroDeTelephone) {
-		this.numeroDeTelephone = numeroDeTelephone;
-	}
-
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
-	}
-
-	public String getMotDePasse() {
-		return motDePasse;
-	}
-
-	public void setMotDePasse(String motDePasse) {
-		this.motDePasse = motDePasse;
-	}
-
-	public Adresse[] getAdresses() {
-		return adresses;
-	}
-
-	public void setAdresses(Adresse[] adresses) {
-		this.adresses = adresses;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	@Override
 	public String toString() {
-		return "Utilisateur [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", adresseMail=" + adresseMail
-				+ ", numeroDeTelephone=" + numeroDeTelephone + ", login=" + login + ", motDePasse=" + motDePasse
-				+ ", adresses=" + Arrays.toString(adresses) + "]";
+		return "Utilisateur [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", type=" + type + "]";
 	}
 
 }

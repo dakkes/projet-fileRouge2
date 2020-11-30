@@ -1,98 +1,88 @@
 package org.eclipse.model;
 
+ 
+
 public class Produit {
 
 	private int id;
-	private int nomArticle;
+	private String nomArticle;
 	private int quantiteStock;
-	private String categorie;
 	private String designation;
-	private double prixUnitaire;
-	private String image;
-	private String url;
-
-	public Produit(int id, int nomArticle, int quantiteStock, String categorie, String designation, double prixUnitaire,
-			String image, String url) {
+	private float prixUnitaire;
+	private String urlImage;
+	private boolean choix;
+	private ListeProduit listeProduit;
+	public Produit() {
+		listeProduit=new ListeProduit();
+	}
+	public Produit(int id, String nomArticle, int quantiteStock, float prixUnitaire, String urlImage, boolean choix,
+			ListeProduit listeProduit) {
 		super();
 		this.id = id;
 		this.nomArticle = nomArticle;
 		this.quantiteStock = quantiteStock;
-		this.categorie = categorie;
-		this.designation = designation;
 		this.prixUnitaire = prixUnitaire;
-		this.image = image;
-		this.url = url;
+		this.urlImage = urlImage;
+		this.choix = choix;
+		this.listeProduit = listeProduit;
 	}
-
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	public int getNomArticle() {
+	public String getNomArticle() {
 		return nomArticle;
 	}
-
-	public void setNomArticle(int nomArticle) {
+	public void setNomArticle(String nomArticle) {
 		this.nomArticle = nomArticle;
 	}
-
 	public int getQuantiteStock() {
 		return quantiteStock;
 	}
-
 	public void setQuantiteStock(int quantiteStock) {
 		this.quantiteStock = quantiteStock;
 	}
-
-	public String getCategorie() {
-		return categorie;
-	}
-
-	public void setCategorie(String categorie) {
-		this.categorie = categorie;
-	}
-
 	public String getDesignation() {
 		return designation;
 	}
-
 	public void setDesignation(String designation) {
 		this.designation = designation;
 	}
-
-	public double getPrixUnitaire() {
+	public float getPrixUnitaire() {
 		return prixUnitaire;
 	}
-
-	public void setPrixUnitaire(double prixUnitaire) {
+	public void setPrixUnitaire(float prixUnitaire) {
 		this.prixUnitaire = prixUnitaire;
 	}
-
-	public String getImage() {
-		return image;
+	public String getUrlImage() {
+		return urlImage;
 	}
-
-	public void setImage(String image) {
-		this.image = image;
+	public void setUrlImage(String urlImage) {
+		this.urlImage = urlImage;
 	}
-
-	public String getUrl() {
-		return url;
+	public boolean isChoix() {
+		return choix;
 	}
-
-	public void setUrl(String url) {
-		this.url = url;
+	public void setChoix(boolean choix) {
+		this.choix = choix;
 	}
-
+	public ListeProduit getListeProduit() {
+		return listeProduit;
+	}
+	public void setListeProduit(ListeProduit listeProduit) {
+		this.listeProduit = listeProduit;
+	}
 	@Override
 	public String toString() {
-		return "Produit [id=" + id + ", nomArticle=" + nomArticle + ", quantiteStock=" + quantiteStock + ", categorie="
-				+ categorie + ", designation=" + designation + ", prixUnitaire=" + prixUnitaire + ", image=" + image
-				+ ", url=" + url + "]";
+		return "Produit [id=" + id + ", nomArticle=" + nomArticle + ", quantiteStock=" + quantiteStock
+				+ ", designation=" + designation + ", prixUnitaire=" + prixUnitaire + ", urlImage=" + urlImage
+				+ ", choix=" + choix + ", listeProduit=" + listeProduit + "]";
 	}
-
+	
+	
+	
+	
+	
 }
