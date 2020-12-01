@@ -1,12 +1,73 @@
 @charset "UTF-8";
 
+/*main image*/
+#main-image {
+	height: 580px;
+	width: 1490px;
+	padding-right: 10px;
+	background:
+		url('https://blog.sensefuel.com/hubfs/Pour%20Blog%20%28illustrations%20et%20photos%29/intelligence-artificielle-ecommerce-1.jpg');
+}
 
- img{
-  height:380px;
-  width:480px;
-  
-  }
-  p{
-  color:red;
-  
-  }
+p {
+	font-family: 'crete Round', serif;
+	font-size: 20px;
+}
+
+h1 {
+	color: #585582;
+	text-align: center;
+	font-family: 'crete Round', serif;
+	font-size: 70px;
+}
+
+h5 {
+	font-family: 'crete Round', serif;
+	 
+	text-transform: uppercase;
+    margin: 0 auto 20px auto;
+    width: 600px;
+    border-bottom: 1px solid #02b8dd;
+    padding: 20px;
+	border-bottom-width: thin;
+}
+
+#steps  ul li {
+	font-family: 'crete Round', serif;
+	text-align: center;
+	list-style-type: none;
+}
+
+#steps-1 p {
+	font-style: oblique 15deg;
+}
+
+#steps-2 p {
+	font-style: oblique 15deg;
+}
+
+footer {
+	margin: 0 auto 20px auto;
+	height: 250px;
+	width: 1490px;
+	padding-right: 20px;
+	background-color: #444;
+}
+
+footer h1 {
+	font-size: 50px;
+	color: #fff;
+	text-align: center;
+	padding-top: 80px;
+}
+.orange{
+	
+	font-size:20px;
+}
+
+.copyright {
+	text-align: center;
+	font-weight: bold;
+	padding-top: 30px;
+	color: #777;
+}

@@ -1,4 +1,2 @@
- 
-
-<c:url var="deconnection" value="/deconnexion"></c:url>
-<a href="${ deconnection }">Cliquer ici pour se déconnecter.</a>
+<c:url var="deconnexionVendeur" value="/deconnexionVendeur"></c:url>
+<a href="${ deconnexionVendeur }">Cliquer ici pour se déconnecter.</a>

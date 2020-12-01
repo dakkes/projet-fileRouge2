@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+
+img{
+  height:380px;
+  width:480px;
+  
+  }
+  p{
+  color:rgb(40, 91, 0);
+  font-size:30px;
+  font-style: oblique 15deg;
+  
+  }
