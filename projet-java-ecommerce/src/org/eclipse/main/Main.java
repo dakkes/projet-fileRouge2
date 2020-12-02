@@ -32,7 +32,7 @@ public class Main {
 		 System.out.println(utilisateurs);
 		 
 		 Produit produits;
-		 produits=new Produit(15, "Ordinateur Asus", 25, 25, "lespc.com", true, null);
+		 produits=new Produit(15, "Ordinateur Asus", 25, 25, "lespc.com", null);
 		
 		 System.out.println(produits);
 		 

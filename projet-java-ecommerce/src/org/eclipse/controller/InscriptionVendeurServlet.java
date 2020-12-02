@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.eclipse.model.Utilisateur;
+import org.eclipse.service.UtilisateurService;
+
  
 @WebServlet("/inscriptionVendeur")
 public class InscriptionVendeurServlet extends HttpServlet {
@@ -14,12 +17,24 @@ public class InscriptionVendeurServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher("/vendeur/inscriprionVendeur.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher( "/WEB-INF/vendeur/inscriptionVendeur.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		doGet(request, response);
+		String nom = request.getParameter("nom");
+		String prenom = request.getParameter("prenom");
+		Utilisateur utilisateur = UtilisateurService. findByNomAndPrenom(nom, prenom);
+		if (utilisateur == null) {
+			response.sendRedirect( "pageVendeur");
+		} else {
+			 response.sendRedirect("home");
+			 
+		 
+		
+		
+		 
 	}
 
+	}
 }

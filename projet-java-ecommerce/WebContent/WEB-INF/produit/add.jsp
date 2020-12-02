@@ -1,16 +1,15 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<title>projet-java-ecommerce</title>
+<title>produit</title>
 </head>
 <body>
-	  <h1 class="bg-secondary text-white">PAGE INSCRIPTION VENDEUR</h1>
+	 <h1 class="bg-secondary text-white">AJOUT PRODUITS</h1>
 	 
 	 <div class="progress">
 		<div class="progress-bar" role="progressbar" style="width: 15%"
@@ -23,25 +22,25 @@
 			aria-valuemax="100"></div>
 	</div><br/>
 	
-	<form action="inscriptionVendeur" method="POST">
+	<form action="ajout" method="POST">
 		<div>
-			<label class="bg-primary text-red" for="nom">NOM
-				</label> <input type=text id=nom name=nom>
+			<label class="bg-primary text-red" for="Designation">Designation
+				</label> <input type=text id=Designation name=Designation>
 		</div>
 		<div>
-			<label class="bg-primary text-red" for="prenom">PRENOM
-				</label> <input type=prenom id=prenom name=prenom>
+			<label class="bg-primary text-red" for="QuantiteStock">QuantiteStock
+				</label> <input type=QuantiteStock id=QuantiteStock name=QuantiteStock>
 		</div>
-		 <div>
-			<label class="bg-primary text-red" for="prenom">Adresse
-				</label> <input type=adresse id=adresse name=adresse>
+		<div>
+			<label class="bg-primary text-red" for="PrixUnitaire">PrixUnitaire
+				</label> <input type=PrixUnitaire id=PrixUnitaire name=PrixUnitaire>
 		</div>
-		 
+		<div>
+			<label class="bg-primary text-red" for="UrlImage">Image
+				</label> <input type=UrlImage id=UrlImage name=UrlImage>
+		</div>
 		<button class="btn btn-primary">Cliquer Ici</button>
 	</form>
-
-</body>
-</html>
 
 </body>
 </html>

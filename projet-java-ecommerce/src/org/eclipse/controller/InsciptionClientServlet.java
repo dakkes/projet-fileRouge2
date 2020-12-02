@@ -9,18 +9,30 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
- 
+import org.eclipse.model.Utilisateur;
+import org.eclipse.service.UtilisateurService;
+
 @WebServlet("/inscription")
 public class InsciptionClientServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher("/WEB-INF/client/inscriptionClient.jsp").forward(request, response);
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		this.getServletContext().getRequestDispatcher("/WEB-INF/client/inscriptionClient.jsp").forward(request,
+				response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		doGet(request, response);
+		String nom = request.getParameter("nom");
+		String prenom = request.getParameter("prenom");
+		Utilisateur utilisateur = UtilisateurService.findByNomAndPrenom(nom, prenom);
+		if (utilisateur == null) {
+			response.sendRedirect("pageClient");
+		} else {
+			response.sendRedirect("home");
+
+		}
 	}
 
 }

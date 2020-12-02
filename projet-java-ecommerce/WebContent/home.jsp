@@ -37,7 +37,7 @@
 							</div></li>
 						<li class="nav-item"><a class="nav-link " href="connexion">Client</a></li>
 						<li class="nav-item"><a class="nav-link "
-							href="connexionVendeur"> Vendeur</a></li>
+							href="connexionVendeur">Vendeur</a></li>
 					</ul>
 					<form class="form-inline">
 						<input class="form-control mr-sm-2" type="search"
@@ -59,11 +59,11 @@
 		<div class="wrapper">
 			<ul>
 				<li id="step-1">
-					<h5><a href="connexion">Client</a></h5>
+					<h5><a href="inscription">Inscription Client</a></h5>
 					<p>Identifier votre produit qui seras garantie.</p>
 				</li>
 				<li id="step-2">
-					 <h5><a href="connexionVendeur">Vendeur</a></h5>
+					 <h5><a href="inscriptionVendeur">Inscription Vendeur</a></h5>
 					<p>Proposer vos produits et nous nous occupons de tous.</p>
 				</li>
 			</ul>

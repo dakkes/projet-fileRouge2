@@ -29,7 +29,7 @@ public class ConnexionVendeurServlet extends HttpServlet {
 		if (utilisateur == null) {
 			response.sendRedirect("connexionVendeur");
 		} else {
-			 response.sendRedirect("pageVendeur");
+			 response.sendRedirect("/pageVendeur");
 			 
 			 
 

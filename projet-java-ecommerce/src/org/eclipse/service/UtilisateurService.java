@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.eclipse.model.Utilisateur;
 
 public class UtilisateurService {
-	private ArrayList<Utilisateur> utilisateurs = new ArrayList<Utilisateur>();
+	private static ArrayList<Utilisateur> utilisateurs = new ArrayList<Utilisateur>();
 
 	public UtilisateurService() {
 		utilisateurs.add(new Utilisateur(1, "zlatan","ibra", "client"));
@@ -14,7 +14,16 @@ public class UtilisateurService {
 		utilisateurs.add(new Utilisateur(4, "bill","gates", "vendeur"));
 	}
 	
-	public Utilisateur findByNomAndPrenom(String nom, String prenom) {
+	public static Utilisateur findByNomAndPrenom1(String nom, String prenom) {
+		for(Utilisateur utilisateur: utilisateurs) {
+			if(utilisateur.getNom().equals(nom) &&utilisateur.getPrenom().equals(prenom)) {
+				return utilisateur;
+			}
+		}
+		return null;
+	}
+	
+	public static Utilisateur findByNomAndPrenom(String nom, String prenom) {
 		for(Utilisateur utilisateur: utilisateurs) {
 			if(utilisateur.getNom().equals(nom) &&utilisateur.getPrenom().equals(prenom)) {
 				return utilisateur;

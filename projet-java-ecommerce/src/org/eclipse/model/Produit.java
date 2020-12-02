@@ -5,44 +5,38 @@ package org.eclipse.model;
 public class Produit {
 
 	private int id;
-	private String nomArticle;
-	private int quantiteStock;
 	private String designation;
 	private float prixUnitaire;
+	private int quantiteStock;
 	private String urlImage;
-	private boolean choix;
-	private ListeProduit listeProduit;
+	private String nomArticle;
+	
+	
+	
 	public Produit() {
-		listeProduit=new ListeProduit();
-	}
-	public Produit(int id, String nomArticle, int quantiteStock, float prixUnitaire, String urlImage, boolean choix,
-			ListeProduit listeProduit) {
 		super();
-		this.id = id;
-		this.nomArticle = nomArticle;
-		this.quantiteStock = quantiteStock;
+	}
+	public Produit(String designation, float prixUnitaire, int quantiteStock, String urlImage, String nomArticle) {
+		this.designation = designation;
 		this.prixUnitaire = prixUnitaire;
+		this.quantiteStock = quantiteStock;
 		this.urlImage = urlImage;
-		this.choix = choix;
-		this.listeProduit = listeProduit;
+		this.nomArticle = nomArticle;
+	}
+	public Produit(int id, String designation, float prixUnitaire, int quantiteStock, String urlImage,
+			String nomArticle) {
+		this.id = id;
+		this.designation = designation;
+		this.prixUnitaire = prixUnitaire;
+		this.quantiteStock = quantiteStock;
+		this.urlImage = urlImage;
+		this.nomArticle = nomArticle;
 	}
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public String getNomArticle() {
-		return nomArticle;
-	}
-	public void setNomArticle(String nomArticle) {
-		this.nomArticle = nomArticle;
-	}
-	public int getQuantiteStock() {
-		return quantiteStock;
-	}
-	public void setQuantiteStock(int quantiteStock) {
-		this.quantiteStock = quantiteStock;
 	}
 	public String getDesignation() {
 		return designation;
@@ -56,30 +50,32 @@ public class Produit {
 	public void setPrixUnitaire(float prixUnitaire) {
 		this.prixUnitaire = prixUnitaire;
 	}
+	public int getQuantiteStock() {
+		return quantiteStock;
+	}
+	public void setQuantiteStock(int quantiteStock) {
+		this.quantiteStock = quantiteStock;
+	}
 	public String getUrlImage() {
 		return urlImage;
 	}
 	public void setUrlImage(String urlImage) {
 		this.urlImage = urlImage;
 	}
-	public boolean isChoix() {
-		return choix;
+	public String getNomArticle() {
+		return nomArticle;
 	}
-	public void setChoix(boolean choix) {
-		this.choix = choix;
+	public void setNomArticle(String nomArticle) {
+		this.nomArticle = nomArticle;
 	}
-	public ListeProduit getListeProduit() {
-		return listeProduit;
-	}
-	public void setListeProduit(ListeProduit listeProduit) {
-		this.listeProduit = listeProduit;
-	}
+
 	@Override
 	public String toString() {
-		return "Produit [id=" + id + ", nomArticle=" + nomArticle + ", quantiteStock=" + quantiteStock
-				+ ", designation=" + designation + ", prixUnitaire=" + prixUnitaire + ", urlImage=" + urlImage
-				+ ", choix=" + choix + ", listeProduit=" + listeProduit + "]";
+		return "Produit [id=" + id + ", designation=" + designation + ", prixUnitaire=" + prixUnitaire
+				+ ", quantiteStock=" + quantiteStock + ", urlImage=" + urlImage + ", nomArticle=" + nomArticle
+				+ "]";
 	}
+	 
 	
 	
 	
