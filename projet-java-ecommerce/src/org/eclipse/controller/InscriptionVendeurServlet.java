@@ -24,7 +24,8 @@ public class InscriptionVendeurServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String nom = request.getParameter("nom");
 		String prenom = request.getParameter("prenom");
-		Utilisateur utilisateur = UtilisateurService. findByNomAndPrenom(nom, prenom);
+		UtilisateurService utilisateurService = new UtilisateurService();
+		Utilisateur utilisateur = utilisateurService.findByNomAndPrenom(nom, prenom);
 		if (utilisateur == null) {
 			response.sendRedirect( "pageVendeur");
 		} else {

@@ -6,22 +6,26 @@
 <meta charset="UTF-8">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/produit.css">
+	<style>
+<%@ include file="../../css/produit.css" %>
+</style>
+ 
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="container-fluid">
+	
 		<h1>LAPTOP</h1>
+		<div class="container-fluid">
 		<header>
 			<nav class="navbar navbar-expand-md navbar-dark bg-dark">
 				<a class="navbar-brand" href="home">HIGH TECH</a>
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="pageClient"
+						class="nav-link dropdown-toggle" href="ajout"
 						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-						role="button">Top Vente</a></li>
+						role="button">AJOUT</a></li>
 					<li class="nav-item"><a class="nav-link "
-						href="connexionVendeur">Vendeur</a></li>
+						href="connexion">Vendeur</a></li>
 					<li class="nav-item"><a class="nav-link " href="connexion">Client</a></li>
 				</ul>
 				<form class="form-inline">
@@ -32,8 +36,9 @@
 			</nav>
 	</div>
 	</header>
+	<div class="container">
 	<section id="main-image">
-		<div class="container">
+		
 			<div class="row">
 				<div class="col-6">
 					<img

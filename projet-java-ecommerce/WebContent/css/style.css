@@ -45,6 +45,31 @@ h5 {
 #steps-2 p {
 	font-style: oblique 15deg;
 }
+li{display:inline-block;min-width:50px;}
+li a {
+    text-decoration:none;
+    line-height: 70px;
+    padding: 0 10px;
+    text-align: center;
+    font-size: 1.3em;
+    color: #444444;
+    text-transform: uppercase;
+}
+li a:after {
+  content: '';
+  display: block;
+  margin: auto;
+  height: 1px;
+  width: 0;
+  background: transparent;
+  transition: width .5s ease, background-color .5s ease;
+}
+li a:hover:after {
+  width: 90%;
+  background: #444;
+}
+
+
 
 footer {
 	margin: 0 auto 20px auto;

@@ -1,34 +1,40 @@
- package org.eclipse.service;
+  package org.eclipse.service;
 
 import java.util.ArrayList;
 
+import org.eclipse.dao.UtilisateurDao;
+import org.eclipse.model.Produit;
 import org.eclipse.model.Utilisateur;
 
 public class UtilisateurService {
-	private static ArrayList<Utilisateur> utilisateurs = new ArrayList<Utilisateur>();
+	private UtilisateurDao utilisateurDao = new UtilisateurDao();
 
 	public UtilisateurService() {
-		utilisateurs.add(new Utilisateur(1, "zlatan","ibra", "client"));
-		utilisateurs.add(new Utilisateur(2, "tilo","tilo", "client"));
-		utilisateurs.add(new Utilisateur(3, "john","wick", "vendeur"));
-		utilisateurs.add(new Utilisateur(4, "bill","gates", "vendeur"));
+
+	}
+
+	public Utilisateur save(Utilisateur utilisateur) {
+		return utilisateurDao.save(utilisateur);
 	}
 	
-	public static Utilisateur findByNomAndPrenom1(String nom, String prenom) {
-		for(Utilisateur utilisateur: utilisateurs) {
-			if(utilisateur.getNom().equals(nom) &&utilisateur.getPrenom().equals(prenom)) {
-				return utilisateur;
-			}
-		}
-		return null;
+	 
+	
+	public void remove(int id) {
+		utilisateurDao.remove(utilisateurDao.findById(id));
 	}
 	
-	public static Utilisateur findByNomAndPrenom(String nom, String prenom) {
-		for(Utilisateur utilisateur: utilisateurs) {
-			if(utilisateur.getNom().equals(nom) &&utilisateur.getPrenom().equals(prenom)) {
-				return utilisateur;
-			}
-		}
-		return null;
+	
+	public void update(int id) {
+		utilisateurDao.remove(utilisateurDao.findById(id));
 	}
+
+	public ArrayList<Utilisateur> findAll() {
+		return (ArrayList<Utilisateur>) utilisateurDao.findAll();
+	}
+	public  Utilisateur findByNomAndPrenom(String nom, String prenom) {
+
+		return utilisateurDao.findByNomAndPrenom(nom, prenom);
+	}
+
+	
 }

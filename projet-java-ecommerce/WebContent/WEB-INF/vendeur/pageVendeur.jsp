@@ -17,6 +17,7 @@
 	</header>
 	<h1 class="bg-primary text-white">Bienvenue chère vendeur</h1>
 	<p>Vos derniers produits Vendu.</p>
+	<p><a href="ajout">Ajout produit</a></p>
 	<img
 		src=" https://www.selectronic.fr/wp-content/uploads/2020/02/EMPIRE-GAMING-Turboost.jpg"
 		alt="images refroidisseur">

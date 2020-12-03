@@ -4,14 +4,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.config.MyConnection;
 import org.eclipse.model.Utilisateur;
 
 public class UtilisateurDao implements Dao<Utilisateur> {
-	
-	
+
 	@Override
 	public Utilisateur save(Utilisateur utilisateur) {
 		Connection c = MyConnection.getConnection();
@@ -35,30 +35,113 @@ public class UtilisateurDao implements Dao<Utilisateur> {
 		return null;
 	}
 
-	 
-
 	@Override
-	public void remove(Utilisateur t) {
-		// TODO Auto-generated method stub
-		
+	public void remove(Utilisateur utilisateur) {
+		Connection c = MyConnection.getConnection();
+		if (c != null) {
+			try {
+				PreparedStatement ps = c.prepareStatement("DELETE FROM  utilisateur  WHERE id = ? ; ");
+				ps.setInt(1, utilisateur.getId());
+				ps.executeUpdate();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
 	}
 
 	@Override
-	public Utilisateur update(Utilisateur t) {
-		// TODO Auto-generated method stub
+	public Utilisateur update(Utilisateur utilisateur) {
+		Connection c = MyConnection.getConnection();
+		if (c != null) {
+			try {
+				PreparedStatement ps = c.prepareStatement(
+						"UPDATE  utilisateur SET nom=?, prenom=?, type=? WHERE id=? ; ",
+						PreparedStatement.RETURN_GENERATED_KEYS);
+				ps.setString(1, utilisateur.getNom());
+				ps.setString(2, utilisateur.getPrenom());
+				ps.setString(3, utilisateur.getType());
+				ps.setInt(4, utilisateur.getId());
+				int nbr = ps.executeUpdate();
+				if (nbr != 0) {
+					return utilisateur;
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 		return null;
 	}
 
 	@Override
 	public Utilisateur findById(int id) {
-		// TODO Auto-generated method stub
+		Connection c = MyConnection.getConnection();
+		if (c != null) {
+			try {
+				PreparedStatement ps = c.prepareStatement("SELECT * FROM Utilisateur WHERE id = ?;");
+				ps.setInt(1, id);
+				ResultSet result = ps.executeQuery();
+				if (result.next()) {
+					int num = result.getInt(1);
+					String nom = result.getString(2);
+					String prenom = result.getString(3);
+					String type = result.getString(4);
+					Utilisateur utilisateur = new Utilisateur(num, nom, prenom, type);
+					return utilisateur;
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 		return null;
 	}
 
 	@Override
 	public List<Utilisateur> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Utilisateur> utilisateurs = new ArrayList<Utilisateur>();
+		Connection c = MyConnection.getConnection();
+		if (c != null) {
+			try {
+				PreparedStatement ps = c.prepareStatement("SELECT * FROM Utilisateur;");
+				ResultSet result = ps.executeQuery();
+				while (result.next()) {
+					int id = result.getInt(1);
+					String nom = result.getString(2);
+					String prenom = result.getString(3);
+					String type = result.getString(4);
+					Utilisateur utilisateur = new Utilisateur(id, nom, prenom, type);
+					utilisateurs.add(utilisateur);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return utilisateurs;
 	}
 
+	public Utilisateur findByNomAndPrenom(String nom, String prenom) {
+		Utilisateur utilisateur = null;
+		;
+		Connection c = MyConnection.getConnection();
+		if (c != null) {
+			try {
+				PreparedStatement ps = c.prepareStatement("SELECT * FROM Utilisateur WHERE nom = ? AND prenom = ?;");
+				ps.setString(1, nom);
+				ps.setString(2, prenom);
+
+				ResultSet result = ps.executeQuery();
+				if (result.next()) {
+					int id = result.getInt(1);
+					String n = result.getString(2);
+					String p = result.getString(3);
+					String type = result.getString(4);
+					utilisateur = new Utilisateur(id, nom, prenom, type);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return utilisateur;
+	}
 }

@@ -1,4 +1,4 @@
- package org.eclipse.controller;
+package org.eclipse.controller;
 
 import java.io.IOException;
 
@@ -13,13 +13,13 @@ import org.eclipse.model.Utilisateur;
 import org.eclipse.service.UtilisateurService;
 
 @WebServlet("/connexion")
-public class ConnexionClientServlet extends HttpServlet {
+public class ConnexionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private UtilisateurService utilisateurService = new UtilisateurService();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+		getServletContext().getRequestDispatcher("/WEB-INF/connexion/index.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -30,11 +30,12 @@ public class ConnexionClientServlet extends HttpServlet {
 		if (utilisateur == null) {
 			response.sendRedirect("connexion");
 		} else {
-			this.getServletContext().getRequestDispatcher("/pageClient").forward(request, response);
-			 
-			 
-
+			if (utilisateur.getType().equals("client")) {
+				this.getServletContext().getRequestDispatcher("/pageClient").forward(request, response);
+			} else {
+				this.getServletContext().getRequestDispatcher("/pageVendeur").forward(request, response);
 			}
+
 		}
 	}
- 
+}
